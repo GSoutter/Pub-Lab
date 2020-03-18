@@ -20,4 +20,18 @@ class CustomerTest < MiniTest::Test
     assert_equal(50, @customer1.wallet())
   end
 
+  def test_spend_cash()
+    @customer1.spend_cash(2)
+    assert_equal(48, @customer1.wallet())
+  end
+
+  def test_buy_drink()
+    #Given
+
+    #When
+
+    #Then
+
+  end
+
 end

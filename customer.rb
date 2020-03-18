@@ -8,6 +8,10 @@ class Customer
     @wallet = wallet
   end
 
+  def spend_cash(amount)
+    @wallet -= amount
+  end
+
 
 
 end

@@ -12,7 +12,7 @@ class DrinkTest < MiniTest::Test
   def setup
     @drink1 = Drink.new("Babycham", 5)
     @drink2 = Drink.new("Fernet-Branca", 10)
-    @drink3 = Drink.new("Fusileir", 2)
+    @drink3 = Drink.new("Fusilier", 2)
 
     @customer1 = Customer.new("Ali G", 50)
   end
