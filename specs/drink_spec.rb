@@ -10,11 +10,9 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class DrinkTest < MiniTest::Test
 
   def setup
-    @drink1 = Drink.new("Babycham", 5)
-    @drink2 = Drink.new("Fernet-Branca", 10)
-    @drink3 = Drink.new("Fusilier", 2)
-
-    @customer1 = Customer.new("Ali G", 50)
+    @drink1 = Drink.new("Babycham", 5, 2)
+    @drink2 = Drink.new("Fernet-Branca", 10, 5)
+    @drink3 = Drink.new("Fusilier", 2, 4)
   end
 
   def test_get_drink_name()
@@ -23,6 +21,10 @@ class DrinkTest < MiniTest::Test
 
   def test_drink_price()
     assert_equal(5, @drink1.price())
+  end
+
+  def test_alcohol_level_of_drink()
+    assert_equal(2, @drink1.alc_unit())
   end
 
 end

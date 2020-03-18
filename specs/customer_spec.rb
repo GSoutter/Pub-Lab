@@ -9,7 +9,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class CustomerTest < MiniTest::Test
 
   def setup
-    @customer1 = Customer.new("Ali G", 50)
+    @customer1 = Customer.new("Ali G", 50, 32, 0)
   end
 
   def test_get_name()
@@ -25,13 +25,13 @@ class CustomerTest < MiniTest::Test
     assert_equal(48, @customer1.wallet())
   end
 
-  def test_buy_drink()
-    #Given
-
-    #When
-
-    #Then
-
+  def test_customer_age()
+    assert_equal(32, @customer1.age())
   end
+
+  def test_customer_drunkeness()
+    assert_equal(0, @customer1.drunkeness())
+  end
+
 
 end

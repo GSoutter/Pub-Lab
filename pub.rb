@@ -6,6 +6,8 @@ class Pub
     @name = name
     @till = till
     @drinks = drinks
+    @age_limit = 18
+    @drunkeness_limit = 10
   end
 
   def stock_check()
@@ -25,6 +27,14 @@ class Pub
     drink_cost = drink.price
     customer.spend_cash(drink_cost)
     till_increase(drink_cost)
+  end
+
+  def age_verify(customer)
+    if customer.age >= @age_limit
+      return true
+    else
+      return false
+    end
   end
 
 end

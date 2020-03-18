@@ -10,15 +10,16 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class PubTest < MiniTest::Test
   def setup
-    @drink1 = Drink.new("Babycham", 5)
-    @drink2 = Drink.new("Fernet-Branca", 10)
-    @drink3 = Drink.new("Fusilier", 2)
+    @drink1 = Drink.new("Babycham", 5, 2)
+    @drink2 = Drink.new("Fernet-Branca", 10, 5)
+    @drink3 = Drink.new("Fusilier", 2, 4)
 
     @drinks = [@drink1, @drink2, @drink3]
 
     @pub = Pub.new("The Moldy Otter", 1000, @drinks)
 
-    @customer1 = Customer.new("Ali G", 50)
+    @customer1 = Customer.new("Ali G", 50, 32, 0)
+    @customer2 = Customer.new("Tyler", 10, 16, 20)
   end
 
   def test_get_pub_name()
@@ -47,6 +48,10 @@ class PubTest < MiniTest::Test
     assert_equal(1002, @pub.till())
     assert_equal(2, @pub.stock_check())
     assert_equal(48, @customer1.wallet())
+  end
+
+  def test_pub_age_limit()
+    assert(@pub.age_verify(@customer1))
   end
 
 end
