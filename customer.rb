@@ -14,4 +14,16 @@ class Customer
     @wallet -= amount
   end
 
+  def increase_drunkeness(units)
+    @drunkeness += units
+  end
+
+  def decrease_drunkeness(units)
+    @drunkeness -= units
+  end
+
+
+
+
+
 end

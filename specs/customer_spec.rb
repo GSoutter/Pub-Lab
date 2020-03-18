@@ -10,6 +10,7 @@ class CustomerTest < MiniTest::Test
 
   def setup
     @customer1 = Customer.new("Ali G", 50, 32, 0)
+
   end
 
   def test_get_name()
@@ -33,5 +34,8 @@ class CustomerTest < MiniTest::Test
     assert_equal(0, @customer1.drunkeness())
   end
 
-
+  def test_increase_drunkeness
+    @customer1.increase_drunkeness(2)
+    assert_equal(2, @customer1.drunkeness())
+  end
 end
