@@ -8,10 +8,16 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class CustomerTest < MiniTest::Test
 
-def setup
-  @customer1 = Customer.new("George", 50)
+  def setup
+    @customer1 = Customer.new("Ali G", 50)
+  end
 
-  
-end
+  def test_get_name()
+    assert_equal("Ali G", @customer1.name())
+  end
+
+  def test_wallet_amount()
+    assert_equal(50, @customer1.wallet())
+  end
 
 end
